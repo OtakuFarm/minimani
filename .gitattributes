@@ -1,0 +1,38 @@
+# Normalize all text files to LF in the repository
+* text=auto eol=lf
+
+# Explicit source types
+*.ts    text
+*.tsx   text
+*.js    text
+*.mjs   text
+*.cjs   text
+*.css   text
+*.html  text
+*.json  text
+*.md    text
+*.py    text
+
+# Batch / shell scripts
+*.bat   text eol=crlf
+*.cmd   text eol=crlf
+*.ps1   text eol=crlf
+*.sh    text eol=lf
+
+# Generated single-file preview builds.
+# These are committed on purpose so the domain-free preview and the in-app
+# "مشاهده پیش‌نمایش" button work immediately after a fresh clone.
+preview.html         text eol=lf linguist-generated=true
+public/preview.html  text eol=lf linguist-generated=true
+
+# Binary assets
+*.zip   binary
+*.gz    binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.webp  binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary

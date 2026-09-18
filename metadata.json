@@ -1,0 +1,6 @@
+{
+  "name": "فروشگاه لباس کودک مینی‌مانی | minimani",
+  "description": "فروشگاه آنلاین تخصصی لباس کودک و نوجوان ۱ تا ۱۴ سال؛ پوشاک وارداتی و ترک با ضمانت کیفیت",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

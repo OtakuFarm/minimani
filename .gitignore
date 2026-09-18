@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+dist/
+dist-preview/
+.vite/
+
+# Test / coverage
+coverage/
+
+# OS & editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment (keep the example file)
+.env*
+!.env.example
