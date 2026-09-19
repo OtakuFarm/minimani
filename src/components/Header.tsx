@@ -9,7 +9,7 @@ import {
   Ruler,
   X,
   Menu,
-  Download
+  ExternalLink
 } from 'lucide-react';
 import { CategoryFilter } from '../types';
 import { toPersianDigits, formatPrice } from '../utils/format';
@@ -27,7 +27,6 @@ interface HeaderProps {
   onOpenAuth: () => void;
   onOpenSizeGuide: () => void;
   onOpenContact: () => void;
-  onOpenDownload: () => void;
   isLoggedIn: boolean;
   userName?: string;
 }
@@ -45,7 +44,6 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenAuth,
   onOpenSizeGuide,
   onOpenContact,
-  onOpenDownload,
   isLoggedIn,
   userName
 }) => {
@@ -63,15 +61,17 @@ export const Header: React.FC<HeaderProps> = ({
           🎉 ارسال رایگان برای خریدهای بالای ۲٬۰۰۰٬۰۰۰ تومان به سراسر کشور
         </div>
         <div className="flex items-center gap-2">
-          <button
-            id="header-topbar-download-btn"
-            onClick={onOpenDownload}
+          <a
+            id="header-topbar-preview-btn"
+            href="preview.html"
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-1.5 text-xs bg-white/20 hover:bg-white/30 text-white px-2.5 py-1 rounded-full transition-colors cursor-pointer font-bold shadow-xs"
-            title="دانلود فایل ZIP پروژه"
+            title="مشاهده پیش‌نمایش سایت"
           >
-            <Download className="w-3.5 h-3.5" />
-            <span>دانلود پروژه (ZIP)</span>
-          </button>
+            <ExternalLink className="w-3.5 h-3.5" />
+            <span>مشاهده پیش‌نمایش</span>
+          </a>
           <button
             onClick={onOpenContact}
             className="hidden md:flex items-center gap-1.5 text-xs bg-white/20 hover:bg-white/30 px-2.5 py-1 rounded-full transition-colors cursor-pointer"
@@ -135,16 +135,18 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Actions: Download, User, Wishlist, Cart */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Download Project Source Code */}
-            <button
-              id="header-download-project-btn"
-              onClick={onOpenDownload}
-              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 text-stone-800 hover:text-rose-600 bg-amber-50 hover:bg-amber-100 rounded-xl transition-colors text-xs font-bold border border-amber-200/90 cursor-pointer shadow-2xs"
-              title="دانلود سورس کد کامل پروژه (فایل ZIP)"
+            {/* Single-file preview */}
+            <a
+              id="header-preview-btn"
+              href="preview.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-2 text-stone-800 hover:text-teal-600 bg-teal-50 hover:bg-teal-100 rounded-xl transition-colors text-xs font-bold border border-teal-200/90 cursor-pointer shadow-2xs"
+              title="مشاهده پیش‌نمایش سایت"
             >
-              <Download className="w-4 h-4 text-rose-500" />
-              <span className="hidden sm:inline">دانلود سورس (ZIP)</span>
-            </button>
+              <ExternalLink className="w-4 h-4 text-teal-600" />
+              <span className="hidden sm:inline">مشاهده پیش‌نمایش</span>
+            </a>
 
             {/* User Auth */}
             <button
@@ -333,17 +335,20 @@ export const Header: React.FC<HeaderProps> = ({
                 >
                   📏 راهنمای سایز بر اساس سن و قد
                 </button>
-                <button
-                  id="mobile-drawer-download-btn"
-                  onClick={() => { onOpenDownload(); setMobileMenuOpen(false); }}
-                  className="text-right px-3 py-2.5 rounded-xl font-medium text-rose-700 bg-rose-50 hover:bg-rose-100 flex items-center justify-between"
+                <a
+                  id="mobile-drawer-preview-btn"
+                  href="preview.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-right px-3 py-2.5 rounded-xl font-medium text-teal-700 bg-teal-50 hover:bg-teal-100 flex items-center justify-between"
                 >
                   <span className="flex items-center gap-2">
-                    <Download className="w-4 h-4 text-rose-600" />
-                    <span>دانلود سورس کد پروژه (فایل ZIP)</span>
+                    <ExternalLink className="w-4 h-4 text-teal-600" />
+                    <span>مشاهده پیش‌نمایش سایت</span>
                   </span>
-                  <span className="text-[10px] bg-rose-200 text-rose-900 px-2 py-0.5 rounded-full font-mono font-bold">ZIP</span>
-                </button>
+                  <span className="text-[10px] bg-teal-200 text-teal-900 px-2 py-0.5 rounded-full font-mono font-bold">HTML</span>
+                </a>
               </div>
             </div>
 

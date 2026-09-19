@@ -1,13 +1,12 @@
 import React from 'react';
-import { Phone, Mail, ArrowUp, ShieldCheck, RefreshCw, Truck, Heart, MapPin, Download } from 'lucide-react';
+import { Phone, Mail, ArrowUp, ShieldCheck, RefreshCw, Truck, Heart, MapPin, ExternalLink } from 'lucide-react';
 import { InfoModalType } from './InfoModal';
 
 interface FooterProps {
   onOpenInfo: (type: InfoModalType) => void;
-  onOpenDownload: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onOpenInfo, onOpenDownload }) => {
+export const Footer: React.FC<FooterProps> = ({ onOpenInfo }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -124,14 +123,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInfo, onOpenDownload }) =>
                 </button>
               </li>
               <li className="pt-1">
-                <button
-                  id="footer-download-project-btn"
-                  onClick={onOpenDownload}
-                  className="hover:text-amber-300 text-amber-400 font-bold transition-colors cursor-pointer flex items-center gap-1.5"
+                <a
+                  id="footer-preview-btn"
+                  href="preview.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-teal-300 text-teal-400 font-bold transition-colors cursor-pointer flex items-center gap-1.5"
                 >
-                  <Download className="w-3.5 h-3.5 text-amber-400" />
-                  <span>دانلود سورس کد پروژه (ZIP)</span>
-                </button>
+                  <ExternalLink className="w-3.5 h-3.5 text-teal-400" />
+                  <span>مشاهده پیش‌نمایش سایت</span>
+                </a>
               </li>
             </ul>
           </div>

@@ -12,8 +12,7 @@ import { AuthModal } from './components/AuthModal';
 import { WishlistModal } from './components/WishlistModal';
 import { Footer } from './components/Footer';
 import { InfoModal, InfoModalType } from './components/InfoModal';
-import { ProjectDownloadModal } from './components/ProjectDownloadModal';
-import { Check, Sparkles } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 export function App() {
   // Navigation & Search State
@@ -27,7 +26,6 @@ export function App() {
   const [sizeGuideModalOpen, setSizeGuideModalOpen] = useState(false);
   const [authModalOpen, setAuthModalOpen] = useState(false);
   const [wishlistModalOpen, setWishlistModalOpen] = useState(false);
-  const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const [infoModalType, setInfoModalType] = useState<InfoModalType>(null);
 
   // User State
@@ -234,7 +232,6 @@ export function App() {
         onOpenAuth={() => setAuthModalOpen(true)}
         onOpenSizeGuide={() => setSizeGuideModalOpen(true)}
         onOpenContact={() => setInfoModalType('contact')}
-        onOpenDownload={() => setDownloadModalOpen(true)}
         isLoggedIn={isLoggedIn}
         userName={userName}
       />
@@ -264,7 +261,6 @@ export function App() {
       {/* Footer */}
       <Footer
         onOpenInfo={(type) => setInfoModalType(type)}
-        onOpenDownload={() => setDownloadModalOpen(true)}
       />
 
       {/* Modals & Drawers */}
@@ -330,11 +326,6 @@ export function App() {
       <InfoModal
         type={infoModalType}
         onClose={() => setInfoModalType(null)}
-      />
-
-      <ProjectDownloadModal
-        isOpen={downloadModalOpen}
-        onClose={() => setDownloadModalOpen(false)}
       />
     </div>
   );
