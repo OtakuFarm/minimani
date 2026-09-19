@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import { X, User, Phone, CheckCircle2 } from 'lucide-react';
 import { toPersianDigits } from '../utils/format';
 
@@ -46,9 +47,17 @@ export const AuthModal: React.FC<AuthModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs overflow-y-auto">
-      <div
-        className="bg-white rounded-3xl max-w-sm w-full shadow-2xl border border-stone-200 relative animate-in fade-in zoom-in-95 duration-200 text-right p-6 sm:p-7"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs overflow-y-auto"
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.94, y: 16 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+        className="bg-white rounded-3xl max-w-sm w-full shadow-2xl border border-stone-200 relative text-right p-6 sm:p-7"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -149,7 +158,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
             </button>
           </form>
         )}
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
