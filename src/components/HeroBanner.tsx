@@ -34,7 +34,7 @@ export const HeroBanner: React.FC<HeroBannerProps> = ({
     <div className="relative overflow-hidden bg-gradient-to-b from-rose-50/60 via-amber-50/40 to-transparent pt-4 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Card */}
-        <div className="relative rounded-3xl bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500 text-white p-6 sm:p-10 md:p-12 overflow-hidden shadow-xl shadow-rose-200/50">
+        <div className="relative rounded-3xl gradient-pan bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500 text-white p-6 sm:p-10 md:p-12 overflow-hidden shadow-xl shadow-rose-200/50">
           {/* Background decorative elements */}
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
           <div className="absolute bottom-0 right-0 w-80 h-80 bg-amber-300/20 rounded-full blur-2xl translate-x-1/3 translate-y-1/3 pointer-events-none" />

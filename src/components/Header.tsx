@@ -58,7 +58,7 @@ export const Header: React.FC<HeaderProps> = ({
       className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100/80 shadow-xs"
     >
       {/* Top Notification Bar */}
-      <div className="bg-gradient-to-r from-rose-500 via-amber-500 to-teal-500 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-inner flex items-center justify-between">
+      <div className="sheen bg-gradient-to-r from-rose-500 via-amber-500 to-teal-500 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-inner flex items-center justify-between">
         <div className="hidden sm:flex items-center gap-2 text-rose-100">
           <Sparkles className="w-3.5 h-3.5 animate-pulse text-amber-200" />
           <span>پوشاک وارداتی و ترک از ۱ تا ۱۴ سال با ضمانت کیفیت</span>
@@ -192,7 +192,10 @@ export const Header: React.FC<HeaderProps> = ({
                 </span>
               </div>
               {cartCount > 0 && (
-                <span className="sm:hidden absolute -top-1 -right-1 bg-rose-500 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center">
+                <span
+                  key={cartCount}
+                  className="cart-pop sm:hidden absolute -top-1 -right-1 bg-rose-500 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center"
+                >
                   {toPersianDigits(cartCount)}
                 </span>
               )}

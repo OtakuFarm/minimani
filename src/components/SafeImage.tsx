@@ -26,7 +26,7 @@ export const SafeImage: React.FC<SafeImageProps> = ({
       <div
         role="img"
         aria-label={imgProps.alt}
-        className={`flex flex-col items-center justify-center gap-1.5 bg-gradient-to-br from-rose-50 via-amber-50 to-teal-50 text-rose-400 select-none ${className ?? ''}`}
+        className={`skeleton flex flex-col items-center justify-center gap-1.5 bg-gradient-to-br from-rose-50 via-amber-50 to-teal-50 text-rose-400 select-none ${className ?? ''}`}
       >
         <ImageOff className="w-6 h-6" />
         {fallbackLabel && (

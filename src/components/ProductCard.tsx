@@ -67,7 +67,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </span>
           )}
           {product.isNew && (
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-500 text-white shadow-xs flex items-center gap-1">
+            <span className="pulse-badge text-[10px] font-bold px-2 py-0.5 rounded-md bg-emerald-500 text-white shadow-xs flex items-center gap-1">
               <Sparkles className="w-2.5 h-2.5" />
               جدید
             </span>
