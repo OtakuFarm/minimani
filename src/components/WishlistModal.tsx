@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { X, Heart, ShoppingBag, Trash2 } from 'lucide-react';
 import { Product } from '../types';
 import { formatPrice } from '../utils/format';
@@ -22,9 +23,17 @@ export const WishlistModal: React.FC<WishlistModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs overflow-y-auto">
-      <div
-        className="bg-white rounded-3xl max-w-lg w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-stone-200 relative animate-in fade-in zoom-in-95 duration-200 text-right p-5 sm:p-6"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/60 backdrop-blur-xs overflow-y-auto"
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.94, y: 24 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ type: 'spring', damping: 26, stiffness: 320 }}
+        className="bg-white rounded-3xl max-w-lg w-full max-h-[85vh] overflow-y-auto shadow-2xl border border-stone-200 relative text-right p-5 sm:p-6"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between pb-3 border-b border-stone-100">
@@ -50,9 +59,12 @@ export const WishlistModal: React.FC<WishlistModalProps> = ({
               <p className="text-xs text-stone-400 mt-1">با زدن قلب روی هر محصول آن را اینجا ذخیره کنید</p>
             </div>
           ) : (
-            wishlist.map((item) => (
-              <div
+            wishlist.map((item, idx) => (
+              <motion.div
                 key={item.id}
+                initial={{ opacity: 0, x: 24 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: idx * 0.06, duration: 0.35, ease: 'easeOut' }}
                 className="flex items-center gap-3 bg-stone-50 p-3 rounded-2xl border border-stone-200"
               >
                 <SafeImage
@@ -92,11 +104,11 @@ export const WishlistModal: React.FC<WishlistModalProps> = ({
                     <Trash2 className="w-3.5 h-3.5" />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             ))
           )}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };

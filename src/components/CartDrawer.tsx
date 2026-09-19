@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { X, Trash2, ShoppingBag, ArrowLeft, Check, Sparkles } from 'lucide-react';
 import { CartItem } from '../types';
 import { formatPrice, toPersianDigits } from '../utils/format';
@@ -64,9 +65,17 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-xs">
-      <div
-        className="w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between animate-in slide-in-from-left duration-300 text-right"
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.25, ease: 'easeOut' }}
+      className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-xs"
+    >
+      <motion.div
+        initial={{ x: '-100%' }}
+        animate={{ x: 0 }}
+        transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+        className="w-full max-w-md bg-white h-full shadow-2xl flex flex-col justify-between text-right"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
@@ -268,8 +277,8 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
             </button>
           </div>
         )}
-      </div>
+      </motion.div>
       <div className="flex-1" onClick={onClose} />
-    </div>
+    </motion.div>
   );
 };

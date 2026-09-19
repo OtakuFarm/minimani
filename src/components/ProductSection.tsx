@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Sparkles, TrendingUp, Flame, SlidersHorizontal, ArrowLeft } from 'lucide-react';
 import { Product, CategoryFilter, OriginFilter, SortOption } from '../types';
 import { ProductCard } from './ProductCard';

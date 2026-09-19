@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
 import {
   Search,
   ShoppingBag,
@@ -50,7 +51,12 @@ export const Header: React.FC<HeaderProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100/80 shadow-xs">
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.55, ease: 'easeOut' }}
+      className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-amber-100/80 shadow-xs"
+    >
       {/* Top Notification Bar */}
       <div className="bg-gradient-to-r from-rose-500 via-amber-500 to-teal-500 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium shadow-inner flex items-center justify-between">
         <div className="hidden sm:flex items-center gap-2 text-rose-100">
@@ -361,6 +367,6 @@ export const Header: React.FC<HeaderProps> = ({
           <div className="flex-1" onClick={() => setMobileMenuOpen(false)} />
         </div>
       )}
-    </header>
+  </motion.header>
   );
 };

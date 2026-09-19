@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Phone, Mail, ArrowUp, ShieldCheck, RefreshCw, Truck, Heart, MapPin, ExternalLink } from 'lucide-react';
 import { InfoModalType } from './InfoModal';
 
@@ -12,7 +13,13 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInfo }) => {
   };
 
   return (
-    <footer className="bg-stone-900 text-stone-300 pt-12 pb-8 border-t border-stone-800 text-right mt-16">
+    <motion.footer
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="bg-stone-900 text-stone-300 pt-12 pb-8 border-t border-stone-800 text-right mt-16"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Features bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-10 border-b border-stone-800 text-xs">
@@ -190,6 +197,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenInfo }) => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 import { Heart, Star, ShoppingBag, Eye, Sparkles } from 'lucide-react';
 import { Product } from '../types';
 import { formatPrice, toPersianDigits } from '../utils/format';
@@ -31,9 +32,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   };
 
   return (
-    <div
+    <motion.div
       onClick={() => onQuickView(product)}
-      className="group bg-white rounded-2xl border border-stone-200/80 hover:border-rose-300 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden cursor-pointer relative"
+      initial={{ opacity: 0, y: 24 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.45, ease: 'easeOut' }}
+      whileHover={{ y: -6 }}
+      className="group bg-white rounded-2xl border border-stone-200/80 hover:border-rose-300 shadow-xs hover:shadow-xl transition-[border-color,box-shadow] duration-300 flex flex-col overflow-hidden cursor-pointer relative"
     >
       {/* Image Container */}
       <div className="relative aspect-4/5 w-full overflow-hidden bg-stone-100">
@@ -148,6 +153,6 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
