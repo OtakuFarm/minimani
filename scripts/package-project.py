@@ -8,7 +8,7 @@ output_name = "minimani-store-source.zip"
 public_path = os.path.join(project_root, "public", output_name)
 root_path = os.path.join(project_root, output_name)
 
-ignore_dirs = {'.git', 'node_modules', 'dist', 'dist-preview', '.vite', '__pycache__', '.temp', '.idea', '.vscode'}
+ignore_dirs = {'.git', 'node_modules', 'dist', 'dist-preview', 'docs', '.vite', '__pycache__', '.temp', '.idea', '.vscode'}
 ignore_exts = {'.zip', '.tar', '.gz', '.pyc'}
 # فایل پیش‌نمایش تکفایلی یک خروجی بیلد است، نه سورس؛ برای سبک ماندن آرشیو حذف می‌شود.
 ignore_names = {'preview.html'}

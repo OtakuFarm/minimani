@@ -8,11 +8,12 @@
     "build": "vite build",
     "build:preview": "node scripts/build-preview.mjs",
     "build:preview:offline": "node scripts/build-preview.mjs --offline",
+    "build:pages": "vite build --base=/minimani/ --outDir docs",
     "preview": "vite preview",
     "preview:static": "vite preview --outDir dist-preview --port 4173",
-    "clean": "rm -rf dist dist-preview preview.html server.js",
-    "lint": "tsc --noEmit",
-    "package:zip": "python3 scripts/package-project.py"
+    "clean": "node scripts/clean.mjs",
+    "clean:all": "node scripts/clean.mjs --all",
+    "lint": "tsc --noEmit"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",

@@ -85,7 +85,7 @@ export const ProjectDownloadModal: React.FC<ProjectDownloadModalProps> = ({
 
             <a
               id="direct-download-project-zip-btn"
-              href="/minimani-store-source.zip"
+              href="minimani-store-source.zip"
               download="minimani-store-source.zip"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-rose-600 hover:bg-rose-700 active:scale-98 text-white px-5 py-3 rounded-2xl font-bold text-sm shadow-md shadow-rose-200 hover:shadow-lg transition-all cursor-pointer whitespace-nowrap"
             >
@@ -108,7 +108,7 @@ export const ProjectDownloadModal: React.FC<ProjectDownloadModalProps> = ({
 
             <a
               id="open-single-file-preview-btn"
-              href="/preview.html"
+              href="preview.html"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-teal-600 hover:bg-teal-700 active:scale-98 text-white px-5 py-3 rounded-2xl font-bold text-sm shadow-md shadow-teal-200 hover:shadow-lg transition-all cursor-pointer whitespace-nowrap"
